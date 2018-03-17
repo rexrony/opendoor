@@ -47,8 +47,10 @@ body{margin:0;font-family: $primary-font;font-size:1.3em;color:$primary-color;li
 .mainmenu{min-height: inherit; display:block;padding:36px 0 5px;}
 .navbar{ float: left;display: block;min-height: 25px;
 &__menu{  @extend %liststyle;}
-&__menu--item{float: left; display: inline-block; line-height: 25px; font-family:$secondaryFont;}
-&__menu--item > a{ padding:10px 28px 10px 0; color: $linkcolor; font-size: 12px;text-transform:capitalize;font-weight:300;font-family:$secondaryFont;
+&__menu--item{float: left; display: inline-block; line-height: 25px; font-family:$secondaryFont;
+&--link{ padding:10px 28px 10px 0; color: $linkcolor; font-size: 12px;text-transform:capitalize;font-weight:300;font-family:$secondaryFont;
+}
+&--link:hover{color: $linkcolor; text-decoration: none;}
 }
 }
 
@@ -63,22 +65,27 @@ li:first-child{ }
     }
 }
 
-.footer{min-height:285px; height: auto; width: 100%; display: block;
+.footer{min-height:340px; height: auto; width: 100%; display: block; color: #fff; font-family: $secondaryFont;
     &__top{
-     background: #f7f7f7;    width: 100%; padding: 30px 0; margin: 20px 0 36px;
+     background:url(../images/footer-bckgrnd.png) no-repeat; background-size: cover; width: 100%; padding:50px 0 10px; 
+     margin:0px 0 0px; min-height: 292px;
+     &_logo{margin: 0 0 10px 0; }
+     &__boxes{min-height: 180px; margin: 0 0 10px 0;
+     &--heading{font-size: 16px; font-weight: 700; margin-bottom: 22px;}
+     &_listing li{list-style: none; }
+     &_listing &--item{color: #fff;font-weight: 400;}
+     &_listing &--item:hover{color: #fff;}
+     }
     }
-    &__top--text{color: #858585; margin: 0px; line-height: 1.7; font-size:14.8px;}
-    &__top--text p{margin-bottom: 0px;}
-    &__bottom{ background: #f7f7f7; width: 100%; min-height: 50px; line-height: 49px;  }
-    &__copyright{color: #131313; font-size: 14.5px;}
-    &-middle{min-height: 513px; position: relative; display: inline-block; width: 100%;
-    &__box{margin-bottom:15px;
-        & figure{margin-bottom:0px;}
-        & img{width: 100%; margin: 0px auto;}
-        & p{font-family: 'Quicksand', sans-serif; font-size: 18px; font-weight: 400; font-style: italic; color: #131313; text-align: center; padding: 5px 15px; } 
-        & span{font-size: 16px; display: block; color: #ff6b2a;  text-align: center; }
-    }
-    }
+    &__bottom{ background: #ffffff; width: 100%; min-height: 50px; line-height: 49px;  }
+    &__copyright{color: #1c85e8; font-size: 15px;}
+    &__app-list{ @extend %liststyle;
+        &--item{ position: relative; padding: 0 0 0 27px;margin:0 0 15px 0; display: block;
+            a{color: #fff;}
+        }
+        &--item:nth-child(1){background: url(../images/home_38.png)no-repeat left top;  }
+        &--item:nth-child(2){background: url(../images/home_41.png)no-repeat left top;  }
+     }
 }
 
 .main__banner{
@@ -444,6 +451,27 @@ box-shadow: 0px 3px 8px 1px rgba(214,214,214,1);
         & h3:after{content: "";display: block; border-bottom: 1px solid #fff; height: 2px; width:199px;    bottom: -34px;
             position: relative;}
     }
+}
+
+.customer_review_container{
+    width: 100%; min-height: 550px; display: inline-block; padding: 50px 0;
+}
+.customer_review{background: #1c85e8; color: #fff; font-family: $secondaryFont; min-height: 400px;
+&_box{ padding:90px 20px; width:100%; display: block; font-weight: 400;font-family: $secondaryFont;margin-bottom: 10px;
+
+  &--text{ font-size: 16px;line-height:22px;
+    span{border-bottom: 1px solid #fff;}
+  }
+&--heading{font-size: 25px;font-family: $secondaryFont; font-weight:500; margin: 10px 0 15px 0;letter-spacing: 1px; text-shadow: 0.1px 0.1px;}
+}
+}
+.get_intouch{background: #0b477f; color: #fff; font-family: $secondaryFont;min-height: 400px;
+ &_box{ font-size: 16px; 
+     text-align: center; padding: 60px 10px;
+     &_userimg{margin:0px auto; display: block; width: 146px; height: 157px; border-radius: 25px;}
+     &--email,&--email:hover{color: #fff;}
+     &--heading{font-size: 25px;font-family: $secondaryFont; font-weight:600; letter-spacing: 0.1px; margin: 10px 0 15px 0; text-transform:uppercase; }
+ }
 }
     /* Screen < 1200px */
     @media (min-width: 100px) and (max-width: 768px) {
